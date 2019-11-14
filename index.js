@@ -1,35 +1,21 @@
-// Multiple functions - function factory
-
-function initSportsScorer(pts) {
-  return function(score) {
-    return score + pts;
-  };
+function fizzBuzz(number){
+  for(let i = 0; i < number; i++){
+    if(i % 3 === 0 && i % 5 ===0){
+      console.log('FizzBuzz');
+    }
+    else if (i % 3 === 0){
+      console.log('Fizz')
+    }
+    else if (i % 5 === 0){
+      console.log('Buzz')
+    }
+    else{
+      console.log('Value of i is ' + i)
+    }
+  }
 }
 
-const threePointer = initSportsScorer(3);
-console.log(threePointer(99));
-
-//Word Function
-
-function wordMessage(greeting, name) {
-  return function(niceMessage) {
-    return greeting + name + niceMessage;
-  };
-}
-
-const morningMessage = wordMessage("Good Morning ", "Steve ");
-console.log(morningMessage("How are you this fine day?"));
-
-// harder function
-
-function rugbyPoints(pts) {
-  return function(finalScore) {
-    return pts + finalScore;
-  };
-}
-
-const winningGame = rugbyPoints(5);
-console.log(winningGame(112));
-
-const xtraPt = rugbyPoints(2);
-console.log(xtraPt(114));
+const test1 = 50;
+const test2 = 55;
+const test3 = 100;
+fizzBuzz(test1);
