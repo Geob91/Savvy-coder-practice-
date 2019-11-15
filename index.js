@@ -1,17 +1,13 @@
-// pass by reference and pass by value
+//Pass by reference
 
-let x = 3;
+const me = {
+  name:"Mark"
+};
 
-//Y references it's own copy of the number 3
-let y = x;
+const me2 = me;
 
-function add1(n){
-  return n + 1;
+function nameChanger(obj, newName) {
+  obj.name =newName;
 }
 
-//Primitives cannot be mutated
-//primitives are passed by value
-
-x = add1 (x);
-console.log("x after add1 is", x);
-console.log(y);
+nameChanger(me,'Fred');
