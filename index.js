@@ -1,21 +1,11 @@
-function fizzBuzz(number){
-  for(let i = 0; i < number; i++){
-    if(i % 3 === 0 && i % 5 ===0){
-      console.log('FizzBuzz');
-    }
-    else if (i % 3 === 0){
-      console.log('Fizz')
-    }
-    else if (i % 5 === 0){
-      console.log('Buzz')
-    }
-    else{
-      console.log('Value of i is ' + i)
-    }
-  }
+function initGreeting(name, greeting){
+  return function(time){
+    return `${name} ${greeting}. The time is ${time}`;
+  };
 }
 
-const test1 = 50;
-const test2 = 55;
-const test3 = 100;
-fizzBuzz(test1);
+const eveningGeorge = initGreeting('George', 'Evening');
+
+const time = new Date(Date.now());
+
+console.log(eveningGeorge(`${time.getHours()}:${time.getMinutes()}`));
