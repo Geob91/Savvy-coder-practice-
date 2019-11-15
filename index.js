@@ -1,14 +1,15 @@
-// Recursion
+// 2 * 2 * 2
 
-function writePsychoBook(num){
-  let str = "";
+console.log(Math.pow(2, 3));
 
-  for (let i = 0; i <= num; i+= 1) {
-    str += "All work and no play makes Jack a dull boy!";
+function myPow(num, exp){
+  let ret = num;
+
+  for (let i = 1; i < exp; i += 1){
+    ret *= num;
   }
 
-  return str;
-
+  return ret;
 }
 
-console.log(writePsychoBook(99));
+console.log(myPow(2, 3));
