@@ -1,11 +1,14 @@
-function initGreeting(name, greeting){
-  return function(time){
-    return `${name} ${greeting}. The time is ${time}`;
-  };
+// Recursion
+
+function writePsychoBook(num){
+  let str = "";
+
+  for (let i = 0; i <= num; i+= 1) {
+    str += "All work and no play makes Jack a dull boy!";
+  }
+
+  return str;
+
 }
 
-const eveningGeorge = initGreeting('George', 'Evening');
-
-const time = new Date(Date.now());
-
-console.log(eveningGeorge(`${time.getHours()}:${time.getMinutes()}`));
+console.log(writePsychoBook(99));
