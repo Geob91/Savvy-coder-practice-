@@ -1,14 +1,10 @@
-function initPerson(fname, lname, age) {
-  return {
-    fname,
-    lname,
-    age,
-    canDrink: function() {
-      return age >= 21;
-    }
-  };
+function logNumber(num) {
+  let count = 1;
+
+  while (count <= num) {
+    console.log(count);
+    count += 1;
+  }
 }
 
-const me = initPerson("George", "Blezard", 19);
-
-console.log(me.canDrink());
+logNumber(100);
