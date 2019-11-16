@@ -17,6 +17,17 @@ const myArr = [
   "Wallat"
 ];
 
+function getMs(arr) {
+  const mName = [];
+  for (let i = 0; i < arr.length; i += 1) {
+    if (arr[i].startsWith("M")) {
+      mName.push(arr[i]);
+    }
+  }
+
+  return mName;
+}
+
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -24,3 +35,5 @@ function getRandomInt(min, max) {
 }
 
 console.log(myArr[getRandomInt(0, myArr.length - 1)]);
+
+console.log(getMs(myArr));
