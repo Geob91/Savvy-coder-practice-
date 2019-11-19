@@ -1,3 +1,5 @@
+// OOP
+/*
 function initSport(rugby, football, basketball) {
   return {
     rugby,
@@ -20,3 +22,29 @@ function initSport(rugby, football, basketball) {
 const mySport = initSport("New Zealand", "Portugal", "Lebron James");
 
 console.log(mySport.getRugby());
+
+*/
+
+// Constructor
+
+function Sport(rugby, ball) {
+  this.rugby = rugby;
+  this.ball = ball;
+
+  this.fullTeam = function() {
+    if (this.rugby < 15) {
+      return "You are needing some more players";
+    }
+    return "You have enough people";
+  };
+
+  this.makeUnderstand = function() {
+    return `The aim of football is to get the football in the net the ball is ${this.ball}.`;
+  };
+}
+
+const infoSport = new Sport(12, "round");
+
+console.log(infoSport.fullTeam());
+
+console.log(infoSport.makeUnderstand());
