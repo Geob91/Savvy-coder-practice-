@@ -1,62 +1,35 @@
-// OOP
+function Player(height, weight, speed, aggression) {
+  this.height = height;
+  this.weight = weight;
+  this.speed = speed;
+  this.aggression = aggression;
 
-function initSport(rugby, football, basketball) {
-  return {
-    rugby,
-    football,
-    basketball,
+  this.whatPosition = function() {
+    if (this.height > 6.2 && this.weight > 260 && aggression === true) {
+      return "Your a big mean dude I think you should be a forward";
+    }
+    return "OK maybe we need to find something else for you.";
+  };
 
-    getRugby: function() {
-      return `This is a contact sport played by 15 people on each side the world champions are ${this.rugby} and have won it 3 times in total.`;
-    },
+  this.newPosition = function() {
+    if (this.speed > 20) {
+      return "HOLY MOLY your fast your going on the wing my son";
+    }
+    return "Ok so you aren't quick enough but we will find something";
+  };
 
-    getFootball: function() {
-      return `This is played by 11 people on each side, ${this.football}; are the Euro Champions`;
-    },
-
-    getBasketball: function() {
-      return `I know very little about this sport I only know ${this.basketball}`;
+  this.backPostion = function() {
+    if (
+      (this.height > 6.0 && this.speed > 12 && this.weight) ||
+      this.aggression === true
+    ) {
+      return "We are going to put you in the backline but come in for a training session to see where we will put you.";
     }
   };
 }
-const mySport = initSport("New Zealand", "Portugal", "Lebron James");
 
-console.log(mySport);
+const letsFindYourPosition = new Player(6.3, 261, 23, true);
 
-console.log(mySport.getRugby());
-console.log(mySport.getFootball());
-console.log(mySport.getBasketball());
-
-// Constructor
-
-/*
-
-function Sport(rugby, otherSport, ball, newCountry) {
-  this.rugby = rugby;
-  this.otherSport = otherSport;
-  this.ball = ball;
-  this.newCountry = newCountry;
-
-  this.fullTeam = function() {
-    if (this.rugby < 15) {
-      return "You need some more players to play";
-    }
-    return "You have enough people to play";
-  };
-
-  this.makeUnderstand = function() {
-    return `The aim of soccer is to get the soccerball in the net the ball is ${this.ball}.`;
-  };
-
-  this.allTogether = function() {
-    return `Soccer is also called ${this.otherSport} and was started in England but many countries are better now such as ${this.newCountry}`;
-  };
-}
-
-const infoSport = new Sport(15, "Football", "round", "Germany");
-
-console.log(infoSport.fullTeam());
-
-console.log(infoSport.makeUnderstand());
-console.log(infoSport.allTogether());
-*/
+console.log(letsFindYourPosition.whatPosition());
+console.log(letsFindYourPosition.newPosition());
+console.log(letsFindYourPosition.backPostion());
