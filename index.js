@@ -1,20 +1,22 @@
-function initFizzBuzz(num1, num2) {
-  return function fizzBuzz46() {
-    for (let i = 0; i <= 100; i += 1) {
-      if (i % num1 === 0 && i % num2 === 0) {
-        console.log(`${i} - FizzBuzz`);
-      } else if (i % num1 === 0) {
-        console.log(`${i} - Fizz`);
-      } else if (i % num2 === 0) {
-        console.log(`${i} - Buzz`);
-      } else {
-        console.log(i);
-      }
+function initSport(rugby, football, basketball) {
+  return {
+    rugby,
+    football,
+    basketball,
+
+    getRugby: function() {
+      return `This is a contact sport played by 15 people on each side the world champions are ${this.rugby} and have won it 3 times in total.`;
+    },
+
+    getFootball: function() {
+      return `This is played by 11 people on each side, ${this.football}; are the Euro Champions`;
+    },
+
+    getBasketball: function() {
+      `I know very little about this sport I only know ${this.basketball}`;
     }
-    return initFizzBuzz();
   };
 }
+const mySport = initSport("New Zealand", "Portugal", "Lebron James");
 
-const fizzBuzz46 = initFizzBuzz(4, 6);
-
-fizzBuzz46();
+console.log(mySport.getRugby());
