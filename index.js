@@ -1,33 +1,20 @@
-function initPerson(fname, lname, age) {
-  return {
-    firstName: fname,
-    lastName: lname,
-    age: 23,
-    canDrink: function() {
-      return age >= 21;
+function initFizzBuzz(num1, num2) {
+  return function fizzBuzz46() {
+    for (let i = 0; i <= 100; i += 1) {
+      if (i % num1 === 0 && i % num2 === 0) {
+        console.log(`${i} - FizzBuzz`);
+      } else if (i % num1 === 0) {
+        console.log(`${i} - Fizz`);
+      } else if (i % num2 === 0) {
+        console.log(`${i} - Buzz`);
+      } else {
+        console.log(i);
+      }
     }
+    return initFizzBuzz();
   };
 }
 
-const me = initPerson("George", "Blezard", 28);
+const fizzBuzz46 = initFizzBuzz(4, 6);
 
-console.log(me.canDrink());
-
-function initShop(food, cosmetics, toys) {
-  return function(total) {
-    return food + cosmetics + toys + total;
-  };
-}
-
-const shopList = initShop(10, 50, 20);
-console.log(shopList(100));
-
-function logNumbers(num) {
-  if (num === 0) {
-    return 2;
-  }
-
-  return num + logNumbers(num - 1);
-}
-
-console.log(logNumbers(10));
+fizzBuzz46();
