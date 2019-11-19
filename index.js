@@ -22,29 +22,35 @@ function initSport(rugby, football, basketball) {
 const mySport = initSport("New Zealand", "Portugal", "Lebron James");
 
 console.log(mySport.getRugby());
-
 */
 
 // Constructor
 
-function Sport(rugby, ball) {
+function Sport(rugby, otherSport, ball, newCountry) {
   this.rugby = rugby;
+  this.otherSport = otherSport;
   this.ball = ball;
+  this.newCountry = newCountry;
 
   this.fullTeam = function() {
     if (this.rugby < 15) {
-      return "You are needing some more players";
+      return "You need some more players to play";
     }
-    return "You have enough people";
+    return "You have enough people to play";
   };
 
   this.makeUnderstand = function() {
-    return `The aim of football is to get the football in the net the ball is ${this.ball}.`;
+    return `The aim of soccer is to get the soccerball in the net the ball is ${this.ball}.`;
+  };
+
+  this.allTogether = function() {
+    return `Soccer is also called ${this.otherSport} and was started in England but many countries are better now such as ${this.newCountry}`;
   };
 }
 
-const infoSport = new Sport(12, "round");
+const infoSport = new Sport(15, "Football", "round", "Germany");
 
 console.log(infoSport.fullTeam());
 
 console.log(infoSport.makeUnderstand());
+console.log(infoSport.allTogether());
