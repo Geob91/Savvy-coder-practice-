@@ -13,7 +13,7 @@ function Player(height, weight, speed, aggression) {
 
   this.newPosition = function() {
     if (this.speed > 20) {
-      return "HOLY MOLY your fast your going on the wing my son";
+      return `HOLY MOLY your fast your going on the wing my son if you can run ${this.speed}MPH you should race Usain Bolt`;
     }
     return "Ok so you aren't quick enough but we will find something";
   };
@@ -29,6 +29,8 @@ function Player(height, weight, speed, aggression) {
 }
 
 const letsFindYourPosition = new Player(6.3, 261, 23, true);
+
+console.log(letsFindYourPosition);
 
 console.log(letsFindYourPosition.whatPosition());
 console.log(letsFindYourPosition.newPosition());
