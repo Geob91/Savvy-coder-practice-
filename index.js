@@ -1,5 +1,5 @@
 // OOP
-/*
+
 function initSport(rugby, football, basketball) {
   return {
     rugby,
@@ -15,16 +15,21 @@ function initSport(rugby, football, basketball) {
     },
 
     getBasketball: function() {
-      `I know very little about this sport I only know ${this.basketball}`;
+      return `I know very little about this sport I only know ${this.basketball}`;
     }
   };
 }
 const mySport = initSport("New Zealand", "Portugal", "Lebron James");
 
+console.log(mySport);
+
 console.log(mySport.getRugby());
-*/
+console.log(mySport.getFootball());
+console.log(mySport.getBasketball());
 
 // Constructor
+
+/*
 
 function Sport(rugby, otherSport, ball, newCountry) {
   this.rugby = rugby;
@@ -54,3 +59,4 @@ console.log(infoSport.fullTeam());
 
 console.log(infoSport.makeUnderstand());
 console.log(infoSport.allTogether());
+*/
