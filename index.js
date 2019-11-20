@@ -24,17 +24,27 @@ function Player(height, weight, speed, aggression) {
     }
   };
   this.setChangeHeight = function(newHeight) {
-    if (!newHeight) {
-      console.error("PLEASE PUT IN A HEIGHT");
-      return;
+    if (newHeight && typeof newHeight === "number") {
+      this.height = newHeight;
+    } else {
+      console.error("Must be a number and cannot be blank");
     }
-    this.height = newHeight;
   };
 }
+
 const letsFindYourPosition = new Player(6.3, 261, 23, true);
+
+/*
 console.log(letsFindYourPosition);
 console.log(letsFindYourPosition.whatPosition());
 console.log(letsFindYourPosition.newPosition());
 console.log(letsFindYourPosition.backPostion());
+*/
 
-letsFindYourPosition.setChangeHeight();
+letsFindYourPosition.setChangeHeight(6);
+
+console.log(letsFindYourPosition);
+
+letsFindYourPosition.setChangeHeight("six");
+
+console.log(letsFindYourPosition);
