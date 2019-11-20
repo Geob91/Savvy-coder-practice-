@@ -37,15 +37,22 @@ Player.prototype.setChangeHeight = function(newHeight) {
 
 const letsFindYourPosition = new Player(6.3, 261, 23, true);
 
+const amazingPlayer = new Player(6.6, 270, 29, true);
+
+amazingPlayer.whatPosition = function() {
+  return `I can play any where I want`;
+};
+
+/*
 console.log("not sure what i am writing", Player);
 console.log(letsFindYourPosition.backPostion);
 
-/*
+
 console.log(letsFindYourPosition);
 console.log(letsFindYourPosition.whatPosition());
 console.log(letsFindYourPosition.newPosition());
 console.log(letsFindYourPosition.backPostion());
-*/
+
 
 letsFindYourPosition.setChangeHeight(6);
 
@@ -54,3 +61,7 @@ console.log(letsFindYourPosition);
 letsFindYourPosition.setChangeHeight("six");
 
 console.log(letsFindYourPosition);
+
+*/
+
+console.log(amazingPlayer.whatPosition());
