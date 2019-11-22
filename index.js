@@ -22,6 +22,10 @@ Winger.prototype.setNewClub = function(moveClub) {
   this.club = moveClub;
 };
 
+Winger.prototype.setGoalTally = function(scores) {
+  this.goals = scores;
+};
+
 const bestInTheWorld = new Winger(
   "Cristiano",
   "Ronaldo",
@@ -31,6 +35,7 @@ const bestInTheWorld = new Winger(
 );
 
 bestInTheWorld.setNewClub("Juventus");
+bestInTheWorld.setGoalTally(99);
 
 console.log(bestInTheWorld);
 
