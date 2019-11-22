@@ -26,6 +26,10 @@ Winger.prototype.setGoalTally = function(scores) {
   this.goals = scores;
 };
 
+Winger.prototype.setOldClubs = function(legend) {
+  this.oldClubs = legend;
+};
+
 const bestInTheWorld = new Winger(
   "Cristiano",
   "Ronaldo",
@@ -34,10 +38,18 @@ const bestInTheWorld = new Winger(
   "Real Madrid"
 );
 
+bestInTheWorld.setOldClubs([
+  "Sporting Lisbon",
+  "Manchester United",
+  "Real Madrid",
+  "Juventus"
+]);
+
 bestInTheWorld.setNewClub("Juventus");
 bestInTheWorld.setGoalTally(99);
 
 console.log(bestInTheWorld);
+//console.log(bestInTheWorld.setOldClubs());
 
 console.log(bestInTheWorld.getFullName());
 console.log(bestInTheWorld.getCareer());
