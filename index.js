@@ -7,15 +7,19 @@ function Striker(first, last, age, internationalCaps, club) {
 }
 
 Striker.prototype.fname = function() {
-  return `My name is ${this.first} it is your pleasure to meet me`;
+  return `My name is ${this.first} it is your pleasure to meet me.`;
 };
 
 Striker.prototype.lname = function() {
-  return `if you have ever met ${this.first} ${this.last} your welcome.`;
+  return `If you have ever met ${this.first} ${this.last} your welcome.`;
 };
 
 Striker.prototype.career = function() {
-  return `I am ${this.age} and have ${this.internationalCaps} for Sweden and currently play for ${this.club}`;
+  return `I am ${this.age} and have ${this.internationalCaps} caps for Sweden and currently play for ${this.club}.`;
+};
+
+Striker.prototype.setOldClubs = function(beenThere) {
+  this.oldClubs = beenThere;
 };
 
 const theManTheMythTheLegend = new Striker(
@@ -25,6 +29,20 @@ const theManTheMythTheLegend = new Striker(
   116,
   "LA Galaxy"
 );
+
+theManTheMythTheLegend.setOldClubs([
+  "Malmo",
+  "Ajax",
+  "Juventus",
+  "Inter Milan",
+  "Barcelona",
+  "PSG",
+  "Manchester United"
+]);
+
+console.log(theManTheMythTheLegend.getOldClubs);
+
+console.log;
 
 console.log(theManTheMythTheLegend);
 console.log(theManTheMythTheLegend.fname());
