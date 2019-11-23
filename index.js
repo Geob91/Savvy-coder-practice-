@@ -1,4 +1,55 @@
-function Winger(first, last, age, internationalCaps, club) {
+/*
+class Striker {
+  constructor(first, last, age, internationalCaps, club) {
+    this.first = first;
+    this.last = last;
+    this.age = age;
+    this.internationalCaps = internationalCaps;
+    this.club = club;
+  }
+
+  get fname() {
+    return `My name is ${this.first} it is your pleasure to meet me.`;
+  }
+
+  get lname() {
+    return `If you have ever met ${this.first} ${this.last} your welcome.`;
+  }
+
+  get career() {
+    return `I am ${this.age} and have ${this.internationalCaps} caps for Sweden and currently play for ${this.club}.`;
+  }
+
+  set oldClubs(beenThere) {
+    this.oldClubs = beenThere;
+  }
+}
+class theManTheMythTheLegend extends Striker {
+  constructor(first, last, age, internationalCaps, club) {
+    super(fname, lname, age, internationalCaps, clubs);
+  }
+}
+class listClubs extends Striker([
+  "Malmo",
+  "Ajax",
+  "Juventus",
+  "Inter Milan",
+  "Barcelona",
+  "PSG",
+  "Manchester United"
+])
+
+const worldClass = new Striker("Zlatan", "Ibrahimovic", 38, 116, "LA Galaxy");
+
+console.log(theManTheMythTheLegend);
+console.log(theManTheMythTheLegend.fname());
+console.log(theManTheMythTheLegend.lname());
+console.log(theManTheMythTheLegend.career());
+
+
+*/
+
+function Striker(first, last, age, internationalCaps, club) {
   this.first = first;
   this.last = last;
   this.age = age;
@@ -6,50 +57,61 @@ function Winger(first, last, age, internationalCaps, club) {
   this.club = club;
 }
 
-Winger.prototype.wholeName = function() {
-  return `My name is ${this.getFullName()} I am the best player in the world.`;
+Striker.prototype.fname = function() {
+  return `My name is ${this.first} it is your pleasure to meet me.`;
 };
 
-Winger.prototype.getFullName = function() {
-  return `${this.first} ${this.last}`;
+Striker.prototype.lname = function() {
+  return `If you have ever met ${this.first} ${this.last} your welcome.`;
 };
 
-Winger.prototype.getCareer = function() {
-  return ` I play for ${this.club} and I am ${this.age} with ${this.internationalCaps} caps for Portugal`;
+Striker.prototype.career = function() {
+  return `I am ${this.age} and have ${this.internationalCaps} caps for Sweden and currently play for ${this.club}.`;
 };
 
-Winger.prototype.setNewClub = function(moveClub) {
-  this.club = moveClub;
+Striker.prototype.setOldClubs = function(newArray) {
+  this.array = newArray;
 };
 
-Winger.prototype.setGoalTally = function(scores) {
-  this.goals = scores;
-};
-
-Winger.prototype.setOldClubs = function(legend) {
-  this.oldClubs = legend;
-};
-
-const bestInTheWorld = new Winger(
-  "Cristiano",
-  "Ronaldo",
-  34,
-  164,
-  "Real Madrid"
+const theManTheMythTheLegend = new Striker(
+  "Zlatan",
+  "Ibrahimovic",
+  38,
+  116,
+  "LA Galaxy"
 );
 
-bestInTheWorld.setOldClubs([
-  "Sporting Lisbon",
-  "Manchester United",
-  "Real Madrid",
-  "Juventus"
+zlatanArray = [
+  "Malmo",
+  "Ajax",
+  "Juventus",
+  "Inter Milan",
+  "Barcelona",
+  "PSG",
+  "Manchester United"
+];
+theManTheMythTheLegend.setOldClubs(zlatanArray);
+
+Striker.prototype.printNum = function() {
+  for (let i = 0; i <= this.array.length; i += 1) {
+    console.log(this.array[i]);
+  }
+};
+theManTheMythTheLegend.printNum();
+
+/*
+theManTheMythTheLegend.setOldClubs([
+  "Malmo",
+  "Ajax",
+  "Juventus",
+  "Inter Milan",
+  "Barcelona",
+  "PSG",
+  "Manchester United"
 ]);
 
-bestInTheWorld.setNewClub("Juventus");
-bestInTheWorld.setGoalTally(99);
-
-console.log(bestInTheWorld);
-//console.log(bestInTheWorld.setOldClubs());
-
-console.log(bestInTheWorld.getFullName());
-console.log(bestInTheWorld.getCareer());
+console.log(theManTheMythTheLegend);
+console.log(theManTheMythTheLegend.fname());
+console.log(theManTheMythTheLegend.lname());
+console.log(theManTheMythTheLegend.career());
+*/
