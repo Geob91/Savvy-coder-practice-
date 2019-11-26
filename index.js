@@ -1,59 +1,63 @@
-function Striker(first, last, age, internationalCaps, club) {
-  this.first = first;
-  this.last = last;
-  this.age = age;
-  this.internationalCaps = internationalCaps;
-  this.club = club;
+class Person {
+  constructor(fname, lname, age, occupation) {
+    this.fname = fname;
+    this.lname = lname;
+    this.age = age;
+    this.occupation = occupation;
+  }
+
+  get fullName() {
+    return `${this.fname} ${this.lname}`;
+  }
+
+  set changeName(newLname) {
+    if (newLname) {
+      this.lname = newLname;
+    } else {
+      console.error("This is not working.");
+    }
+  }
 }
 
-Striker.prototype.fname = function() {
-  return `My name is ${this.first} it is your pleasure to meet me.`;
-};
+const human1 = new Person("George", "Blezard", "28", "Student");
+human1.changeName = "Ryan";
 
-Striker.prototype.lname = function() {
-  return `If you have ever met ${this.first} ${this.last} your welcome.`;
-};
+console.log(human1);
 
-Striker.prototype.career = function() {
-  return `I am ${this.age} and have ${this.internationalCaps} caps for Sweden and currently play for ${this.club}.`;
-};
-
-Striker.prototype.setOldClubs = function(beenThere) {
-  this.oldClubs = beenThere;
-};
-
-Striker.prototype.getOldClubs = function() {
-  let clubList = `This player played for these clubs`;
-
-  for (let i = 0; i < this.oldClubs.length; i += 1) {
-    clubList += `${i + 1} - ${this.oldClubs[i]}`;
+class Employee extends Person {
+  constructor(fname, lname, age, occupation, empid) {
+    super(fname, lname, age, occupation);
+    this.id = empid;
   }
-  return clubList;
-};
 
-const theManTheMythTheLegend = new Striker(
-  "Zlatan",
-  "Ibrahimovic",
-  38,
-  116,
-  "LA Galaxy"
-);
+  get bio() {
+    return `I am a happy employee ${this.id}`;
+  }
 
-theManTheMythTheLegend.setOldClubs([
-  "Malmo",
-  "Ajax",
-  "Juventus",
-  "Inter Milan",
-  "Barcelona",
-  "PSG",
-  "Manchester United"
-]);
+  get empid() {
+    return `My ID is ${this.id}`;
+  }
 
-console.log(theManTheMythTheLegend);
-console.log(theManTheMythTheLegend.getOldClubs());
+  set empid(id) {
+    this.id;
 
-/* console.log(theManTheMythTheLegend);
-console.log(theManTheMythTheLegend.fname());
-console.log(theManTheMythTheLegend.lname());
-console.log(theManTheMythTheLegend.career());
-*/
+    empid = id;
+  }
+
+  get assignments() {
+    let ret = `the current task list follows :`;
+
+    for (let i = 0; i < this.workload.length; i += 1) {
+      ret += `${this.workload[i]}`;
+    }
+    return ret;
+  }
+
+  set assignments(assignments) {
+    this.workload = assignments;
+  }
+}
+
+const emp1 = new Employee("George", "Blezard", 28, "Student", 1991);
+emp1.assignments = ["Make lesson plan", "Teach lesson", "Grade students"];
+console.log(emp1);
