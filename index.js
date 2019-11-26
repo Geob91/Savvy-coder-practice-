@@ -1,48 +1,59 @@
-class RugbyPlayer {
-  constructor(height, weight, speed, aggression) {
-    this.height = height;
-    this.weight = weight;
-    this.speed = speed;
-    this.aggression = aggression;
-  }
-
-  get whatPosition() {
-    if (this.height > 6.2 && this.weight > 260 && aggression === true) {
-      return "Your a big mean dude I think you should be a forward";
-    }
-
-    return "Ok maybe we need to find something else for you";
-  }
-
-  get speedPosition() {
-    if (this.speed > 20) {
-      return "Holy moly your fast we are putting you on the wing!";
-    }
-    return "OK so maybe your not a winger lets carry on";
-  }
-
-  get backPosition() {
-    if (
-      this.height > 6.0 &&
-      this.speed > 12 &&
-      this.weight > 250 &&
-      this.aggression === true
-    ) {
-      return "I think we need to see you in action, you could be a bulldozer backline or a demon of a lose forward.";
-    }
-  }
-
-  set newHeight(tallHeight) {
-    this.height = tallHeight;
-  }
-
-  get amazingPlayer() {
-    return "I can play anywhere";
-  }
+function Striker(first, last, age, internationalCaps, club) {
+  this.first = first;
+  this.last = last;
+  this.age = age;
+  this.internationalCaps = internationalCaps;
+  this.club = club;
 }
 
-const whichPosition = new RugbyPlayer(6.2, 250, 20, true);
+Striker.prototype.fname = function() {
+  return `My name is ${this.first} it is your pleasure to meet me.`;
+};
 
-const amazingPlayer = new RugbyPlayer(6.5, 260, 20, true);
+Striker.prototype.lname = function() {
+  return `If you have ever met ${this.first} ${this.last} your welcome.`;
+};
 
-console.log(amazingPlayer.backPosition);
+Striker.prototype.career = function() {
+  return `I am ${this.age} and have ${this.internationalCaps} caps for Sweden and currently play for ${this.club}.`;
+};
+
+Striker.prototype.setOldClubs = function(beenThere) {
+  this.oldClubs = beenThere;
+};
+
+Striker.prototype.getOldClubs = function() {
+  let clubList = `This player played for these clubs`;
+
+  for (let i = 0; i < this.oldClubs.length; i += 1) {
+    clubList += `${i + 1} - ${this.oldClubs[i]}`;
+  }
+  return clubList;
+};
+
+const theManTheMythTheLegend = new Striker(
+  "Zlatan",
+  "Ibrahimovic",
+  38,
+  116,
+  "LA Galaxy"
+);
+
+theManTheMythTheLegend.setOldClubs([
+  "Malmo",
+  "Ajax",
+  "Juventus",
+  "Inter Milan",
+  "Barcelona",
+  "PSG",
+  "Manchester United"
+]);
+
+console.log(theManTheMythTheLegend);
+console.log(theManTheMythTheLegend.getOldClubs());
+
+/* console.log(theManTheMythTheLegend);
+console.log(theManTheMythTheLegend.fname());
+console.log(theManTheMythTheLegend.lname());
+console.log(theManTheMythTheLegend.career());
+*/
