@@ -1,9 +1,10 @@
 const numbers = [1, 2, 3, 4, 5, 6];
-const strings = ["hello", "world", "again"];
+const strings = ["Hello", "World", "AgAiN"];
 
 const numbersAndStrings = numbers.concat(strings);
+//Arrow syntax does not have any THIS reference.
 
-numbers.forEach(function(number) {
+numbers.forEach(number => {
   console.log("Number is", number);
 });
 
@@ -14,10 +15,10 @@ strings.forEach(function(string) {
 function updatedNumbersAndStrings(originalArr, stringUpdate, numberUpdate) {
   const updatedNumbersAndStrings = [];
 
-  originalArr.forEach(function(el) {
+  originalArr.forEach(el => {
     console.log("Current Element is", el);
 
-    if (typeof el === "String") {
+    if (typeof el === "string") {
       updatedNumbersAndStrings.push((el += stringUpdate));
     } else {
       updatedNumbersAndStrings.push((el += numberUpdate));
