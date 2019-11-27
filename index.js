@@ -1,63 +1,40 @@
-class Person {
-  constructor(fname, lname, age, occupation) {
-    this.fname = fname;
-    this.lname = lname;
-    this.age = age;
-    this.occupation = occupation;
-  }
+const numbers = [1, 2, 3, 4, 5, 6];
+const strings = ["hello", "world", "again"];
 
-  get fullName() {
-    return `${this.fname} ${this.lname}`;
-  }
+const updatedNumbersAndStrings = [];
+const numbersAndStrings = numbers.concat(strings);
 
-  set changeName(newLname) {
-    if (newLname) {
-      this.lname = newLname;
-    } else {
-      console.error("This is not working.");
-    }
+for (let i = 0; i < numbersAndStrings.length; i += 1) {
+  if (typeof numbersAndStrings[i] === "string") {
+    updatedNumbersAndStrings.push(
+      (numbersAndStrings[i] += "Hello I am a string")
+    );
+  } else {
+    updatedNumbersAndStrings.push((numbersAndStrings[i] += 236));
   }
 }
 
-const human1 = new Person("George", "Blezard", "28", "Student");
-human1.changeName = "Ryan";
+console.log(updatedNumbersAndStrings);
 
-console.log(human1);
+/* const updatedNumbersAndStrings = [];
 
-class Employee extends Person {
-  constructor(fname, lname, age, occupation, empid) {
-    super(fname, lname, age, occupation);
-    this.id = empid;
+while (numbersAndStrings.length > 0) {
+  // remove the last element of the array
+  const value = numbersAndStrings.pop();
+  console.log(`${numbersAndStrings.length}: ${value}`);
+
+  // determine if value is a string or number
+  // and put it in its appropriate array
+  if (typeof value === "string") {
+    strings.push(value);
   }
-
-  get bio() {
-    return `I am a happy employee ${this.id}`;
-  }
-
-  get empid() {
-    return `My ID is ${this.id}`;
-  }
-
-  set empid(id) {
-    this.id;
-
-    empid = id;
-  }
-
-  get assignments() {
-    let ret = `the current task list follows :`;
-
-    for (let i = 0; i < this.workload.length; i += 1) {
-      ret += `${this.workload[i]}`;
-    }
-    return ret;
-  }
-
-  set assignments(assignments) {
-    this.workload = assignments;
+  if (typeof value === "number") {
+    numbers.push(value);
   }
 }
 
-const emp1 = new Employee("George", "Blezard", 28, "Student", 1991);
-emp1.assignments = ["Make lesson plan", "Teach lesson", "Grade students"];
-console.log(emp1);
+console.log("numbers is", numbers);
+console.log("strings is", strings);
+console.log("numbersAndStrings is", numbersAndStrings);
+
+*/
