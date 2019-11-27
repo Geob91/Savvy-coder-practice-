@@ -3,8 +3,26 @@ const strings = ["hello", "world", "again"];
 
 const numbersAndStrings = numbers.concat(strings);
 
+numbers.forEach(function(number) {
+  console.log("Number is", number);
+});
+
+strings.forEach(function(string) {
+  console.log("String is", string);
+});
+
 function updatedNumbersAndStrings(originalArr, stringUpdate, numberUpdate) {
   const updatedNumbersAndStrings = [];
+
+  originalArr.forEach(function(el) {
+    console.log("Current Element is", el);
+
+    if (typeof el === "String") {
+      updatedNumbersAndStrings.push((el += stringUpdate));
+    } else {
+      updatedNumbersAndStrings.push((el += numberUpdate));
+    }
+  });
 
   for (let i = 0; i < originalArr.length; i += 1) {
     if (typeof originalArr[i] === "string") {
