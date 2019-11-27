@@ -1,8 +1,14 @@
-const fruits = ["apple", "kiwi", "pineapple", "jackfruit"];
+const fruits = [
+  "apple",
+  "kiwi",
+  "pineapple",
+  "jackfruit", // index is 3
+  "dragonfruit",
+  "pineapple",
+  "mango",
+  "guava", // index is 7
+  "strawberry"
+];
 
-const moreFruits = ["dragonfruit", "pineapple", "mango", "guava", "strawberry"];
-
-const unshifted = fruits.unshift();
-
-console.log(unshifted);
+const spliceReturns = fruits.splice(3, 3, "raspberries");
 console.log(fruits);
