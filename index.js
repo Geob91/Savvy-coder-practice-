@@ -1,20 +1,22 @@
 const numbers = [1, 2, 3, 4, 5, 6];
 const strings = ["hello", "world", "again"];
 
-const updatedNumbersAndStrings = [];
 const numbersAndStrings = numbers.concat(strings);
 
-for (let i = 0; i < numbersAndStrings.length; i += 1) {
-  if (typeof numbersAndStrings[i] === "string") {
-    updatedNumbersAndStrings.push(
-      (numbersAndStrings[i] += "Hello I am a string")
-    );
-  } else {
-    updatedNumbersAndStrings.push((numbersAndStrings[i] += 236));
+function updatedNumbersAndStrings(originalArr, stringUpdate, numberUpdate) {
+  const updatedNumbersAndStrings = [];
+
+  for (let i = 0; i < originalArr.length; i += 1) {
+    if (typeof originalArr[i] === "string") {
+      updatedNumbersAndStrings.push((originalArr[i] += stringUpdate));
+    } else {
+      updatedNumbersAndStrings.push((originalArr[i] += numberUpdate));
+    }
   }
+  return updatedNumbersAndStrings;
 }
 
-console.log(updatedNumbersAndStrings);
+console.log(updatedNumbersAndStrings(numbersAndStrings, "Hello", 236));
 
 /* const updatedNumbersAndStrings = [];
 
