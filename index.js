@@ -231,12 +231,6 @@ const users = [
   }
 ];
 
-const usersWithPrefixedName = users.map(user => `Mr ${user.name}`);
+const longNames = users.filter(user => user.username.length > 5);
 
-console.log(usersWithPrefixedName);
-
-const userInfo = users.map(
-  user => `${user.name} ${user.email} ${user.website}`
-);
-
-console.log(userInfo);
+console.log(longNames);
