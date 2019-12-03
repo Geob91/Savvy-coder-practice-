@@ -234,3 +234,9 @@ const users = [
 const usersWithPrefixedName = users.map(user => `Mr ${user.name}`);
 
 console.log(usersWithPrefixedName);
+
+const userInfo = users.map(
+  user => `${user.name} ${user.email} ${user.website}`
+);
+
+console.log(userInfo);
