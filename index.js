@@ -1,4 +1,4 @@
-const users = [
+/* const users = [
   {
     id: 1,
     name: "Leanne Graham",
@@ -231,6 +231,106 @@ const users = [
   }
 ];
 
-const longNames = users.filter(user => user.username.length > 5);
+const longNames = users.filter(user => user.website.endsWith(".net"));
 
 console.log(longNames);
+
+*/
+
+class Striker {
+  constructor(first, last, age, internationalCaps, club) {
+    this.first = first;
+    this.last = last;
+    this.age = age;
+    this.internationalCaps = internationalCaps;
+    this.club = club;
+  }
+
+  get fname() {
+    return `My name is ${this.first} it is your pleasure to meet me.`;
+  }
+
+  get lname() {
+    return `If you have ever met ${this.first} ${this.last} your welcome.`;
+  }
+
+  get career() {
+    return `I am ${this.age} and have ${this.internationalCaps} caps for Sweden and currently play for ${this.club}.`;
+  }
+
+  get oldTeams() {
+    return `My old team ${this.club}`;
+  }
+
+  set oldTeams(newArray) {
+    this.oldTeams = newArray;
+  }
+}
+const zlatan = new Striker("Zlatan", "Ibrahimovic", 38, 116, "LA Galaxy");
+
+oldTeams = [
+  "Malmo",
+  "Ajax",
+  "Juventus",
+  "Inter Milan",
+  "Barcelona",
+  "PSG",
+  "Manchester United"
+];
+console.log(zlatan.oldTeams);
+
+/*
+class CenterBack {
+  constructor(fname, lname, age, height, weight) {
+    this.fname = fname;
+    this.lname = lname;
+    this.age = age;
+    this.height = height;
+    this.weight = weight;
+  }
+
+  get fullName() {
+    return `${this.fname} ${this.lname}`;
+  }
+  get size() {
+    return `${this.height} ${this.weight}`;
+  }
+}
+const human1 = new CenterBack("Harry", "Maguire", 26, 6.4, 220);
+
+console.log(human1);
+
+class BigBack extends CenterBack {
+  constructor(fname, lname, age, height, weight, club, nationality) {
+    super(fname, lname, age, height, weight);
+    this.badge = club;
+    this.homeland = nationality;
+  }
+
+  get nationality() {
+    return `${this.homeland}`;
+  }
+
+  set nationality(homeland) {
+    this.homeland;
+
+    this.nationality = homeland;
+  }
+
+  get club() {
+    return `${this.badge}`;
+  }
+  set club(badge) {
+    this.badge;
+
+    this.club = badge;
+  }
+}
+
+const defender = new CenterBack("Harry", "Maguire", 26, 6.4, 220);
+defender.club = "Man United";
+defender.homeland = "England";
+
+console.log(defender);
+
+*/
