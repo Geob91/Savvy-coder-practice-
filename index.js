@@ -231,42 +231,41 @@ const users = [
   }
 ];
 
-const updatedUsersCompany = users.map(user => {
-  if (user.company.name === "Hoeger LLC") {
-    user.company.name = "Yost and Sons";
-  }
-  return user;
-});
+// const updatedUsersCompany = users.map(user => {
+//   if (user.company.name === "Hoeger LLC") {
+//     user.company.name = "Yost and Sons";
+//   }
+//   return user;
+// });
+
+// console.log(updatedUsersCompany);
+
+// // If i just want to work with the companies
+
+// const updatedUsersCompany = users.map(({ company }) => {
+//   if (company.name === "Hoeger LLC") {
+//     company.name = "Yost and Sons";
+//   }
+//   return company;
+// });
+
+//console.log(updatedUsersCompany);
+
+//utility function below.
+
+function mergeCompanies(data, acquiringCompany, acquiredCompany) {
+  return data.map(d => {
+    if (d.company.name === acquiredCompany) {
+      d.company.name = acquiringCompany;
+    }
+    return d;
+  });
+}
+
+const updatedUsersCompany = mergeCompanies(
+  users,
+  "Yost and Sons",
+  "Hoeger LLC"
+);
 
 console.log(updatedUsersCompany);
-
-// If i just want to work with the companies
-
-const updatedUsersCompany = users.map(({ company }) => {
-  if (company.name === "Hoeger LLC") {
-    company.name = "Yost and Sons";
-  }
-  return company;
-});
-
-console.log(updatedUsersCompany);
-
-// function mergeCompanies(data, acquiringCompany, acquiredCompany) {
-//   return data.map(d =>
-//     acquiredCompany.map(acquiringCompany => {
-//       return {
-//         [acquiringCompany]: d[acquiringCompany]
-//       };
-//     })
-//   );
-// }
-
-// function stripDataForSpecifiedFields(data, keys) {
-//   return data.map(d =>
-//     keys.map(key => {
-//       return {
-//         [key]: d[key]
-//       };
-//     })
-//   );
-// }
