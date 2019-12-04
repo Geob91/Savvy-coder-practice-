@@ -236,10 +236,10 @@ const users = [
 
 // console.log(usersWithPrefixedName);
 
-const userInfo = users.map(user => ({
-  name: user.name,
-  address: user.address,
-  phone: user.phone
+const userInfo = users.map(({ name, address, phone }) => ({
+  name,
+  address,
+  phone
 }));
 
 console.log(userInfo);
