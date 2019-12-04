@@ -239,4 +239,6 @@ const directories = users.map(({ company }) => ({
   [`${company.name}`]: getUsersForCompany(users, company.name)
 }));
 
-console.log(directories);
+directories.forEach(directory => {
+  console.log(directory);
+});
