@@ -235,6 +235,12 @@ function getUsersForCompany(data, companyName) {
   return data.filter(d => d.company.name === companyName);
 }
 
-const hoegerUsers = getUsersForCompany(users, "Hoeger LLC");
+const hoegerUsers = getUsersForCompany(users, "Yost and Sons").map(
+  ({ name, address, phone }) => ({
+    name,
+    phone,
+    address
+  })
+);
 
 console.log(hoegerUsers);
