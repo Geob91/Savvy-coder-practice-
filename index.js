@@ -231,24 +231,42 @@ const users = [
   }
 ];
 
-function stripDataForSpecifiedFields(data, keys) {
-  return data.map(d =>
-    keys.map(key => {
-      return {
-        [key]: d[key]
-      };
-    })
-  );
-}
+const updatedUsersCompany = users.map(user => {
+  if (user.company.name === "Hoeger LLC") {
+    user.company.name = "Yost and Sons";
+  }
+  return user;
+});
 
-const userNameAndPhones = stripDataForSpecifiedFields(users, ["name", "phone"]);
-console.log(userNameAndPhones);
+console.log(updatedUsersCompany);
 
-// const companyInfoWithA = users
-//   .map(({ name, company }) => ({
-//     name,
-//     companyName: company.name
-//   }))
-//   .filter(user => user.companyName.startsWith("A"));
+// If i just want to work with the companies
 
-// console.log(companyInfoWithA);
+const updatedUsersCompany = users.map(({ company }) => {
+  if (company.name === "Hoeger LLC") {
+    company.name = "Yost and Sons";
+  }
+  return company;
+});
+
+console.log(updatedUsersCompany);
+
+// function mergeCompanies(data, acquiringCompany, acquiredCompany) {
+//   return data.map(d =>
+//     acquiredCompany.map(acquiringCompany => {
+//       return {
+//         [acquiringCompany]: d[acquiringCompany]
+//       };
+//     })
+//   );
+// }
+
+// function stripDataForSpecifiedFields(data, keys) {
+//   return data.map(d =>
+//     keys.map(key => {
+//       return {
+//         [key]: d[key]
+//       };
+//     })
+//   );
+// }
