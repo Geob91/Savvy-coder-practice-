@@ -231,23 +231,11 @@ const users = [
   }
 ];
 
-// const usersWithPrefixedName = users.map(user => `Mr ${user.name}`);
-// const longNames = users.filter(user => user.username.length > 5);
+const companyInfoWithA = users
+  .map(({ name, company }) => ({
+    name,
+    companyName: company.name
+  }))
+  .filter(user => user.companyName.startsWith("A"));
 
-// console.log(usersWithPrefixedName);
-
-const companyInfo = users.map(({ name, company }) => ({
-  name,
-  companyName: company.name
-}));
-
-console.log(companyInfo);
-
-// const userInfo = users.map(({ name, address, phone }) => ({
-//   name,
-//   address,
-//   phone
-// }));
-
-// console.log(userInfo);
-//console.log(longNames);
+console.log(companyInfoWithA);
