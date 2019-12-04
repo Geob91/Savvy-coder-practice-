@@ -231,41 +231,10 @@ const users = [
   }
 ];
 
-// const updatedUsersCompany = users.map(user => {
-//   if (user.company.name === "Hoeger LLC") {
-//     user.company.name = "Yost and Sons";
-//   }
-//   return user;
-// });
-
-// console.log(updatedUsersCompany);
-
-// // If i just want to work with the companies
-
-// const updatedUsersCompany = users.map(({ company }) => {
-//   if (company.name === "Hoeger LLC") {
-//     company.name = "Yost and Sons";
-//   }
-//   return company;
-// });
-
-//console.log(updatedUsersCompany);
-
-//utility function below.
-
-function mergeCompanies(data, acquiringCompany, acquiredCompany) {
-  return data.map(d => {
-    if (d.company.name === acquiredCompany) {
-      d.company.name = acquiringCompany;
-    }
-    return d;
-  });
+function getUsersForCompany(data, companyName) {
+  return data.filter(d => d.company.name === companyName);
 }
 
-const updatedUsersCompany = mergeCompanies(
-  users,
-  "Yost and Sons",
-  "Hoeger LLC"
-);
+const hoegerUsers = getUsersForCompany(users, "Hoeger LLC");
 
-console.log(updatedUsersCompany);
+console.log(hoegerUsers);
