@@ -236,11 +236,18 @@ const users = [
 
 // console.log(usersWithPrefixedName);
 
-const userInfo = users.map(({ name, address, phone }) => ({
+const companyInfo = users.map(({ name, company }) => ({
   name,
-  address,
-  phone
+  companyName: company.name
 }));
 
-console.log(userInfo);
+console.log(companyInfo);
+
+// const userInfo = users.map(({ name, address, phone }) => ({
+//   name,
+//   address,
+//   phone
+// }));
+
+// console.log(userInfo);
 //console.log(longNames);
