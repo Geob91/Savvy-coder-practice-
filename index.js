@@ -231,11 +231,24 @@ const users = [
   }
 ];
 
-const companyInfoWithA = users
-  .map(({ name, company }) => ({
-    name,
-    companyName: company.name
-  }))
-  .filter(user => user.companyName.startsWith("A"));
+function stripDataForSpecifiedFields(data, keys) {
+  return data.map(d =>
+    keys.map(key => {
+      return {
+        [key]: d[key]
+      };
+    })
+  );
+}
 
-console.log(companyInfoWithA);
+const userNameAndPhones = stripDataForSpecifiedFields(users, ["name", "phone"]);
+console.log(userNameAndPhones);
+
+// const companyInfoWithA = users
+//   .map(({ name, company }) => ({
+//     name,
+//     companyName: company.name
+//   }))
+//   .filter(user => user.companyName.startsWith("A"));
+
+// console.log(companyInfoWithA);
