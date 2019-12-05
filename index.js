@@ -231,30 +231,32 @@ const users = [
   }
 ];
 
-const companyLocation = users.map(({ name, address }) => ({
-  name,
-  companyPlace: address.geo
-}));
-
-console.log(companyLocation);
-
-// const userCompanyInfo = users.map(({ name, company }) => ({
+// const companyLocation = users.map(({ name, address }) => ({
 //   name,
-//   companyName: company.name
+//   companyPlace: address.geo
 // }));
 
+// console.log(companyLocation);
+
+const userCompanyInfo = users
+  .map(({ name, company }) => ({
+    name,
+    companyName: company.name
+  }))
+  .filter(user => user.companyName.endsWith("p"));
+
 // const contactNumber = users.map(({ phone }) => ({
-//   phone
+// phone
 // }));
 
 // console.log(contactNumber);
 
-// console.log(userCompanyInfo);
+console.log(userCompanyInfo);
 
-// const userCompanyWebsite = users
-//   .map(({ website }) => ({
-//     website
-//   }))
-//   .filter(user => user.website.endsWith(".net"));
+const userCompanyWebsite = users
+  .map(({ website }) => ({
+    website
+  }))
+  .filter(user => user.website.endsWith(".net"));
 
-// console.log(userCompanyWebsite);
+console.log(userCompanyWebsite);
