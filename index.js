@@ -1210,56 +1210,80 @@ const todos = [
   }
 ];
 
-function checkTaskCompletion(task, complete) {
-  return task.map(t =>
-    complete
-      .map(complete => {
-        return {
-          [complete]: t[complete]
-        };
-      })
-      .filter(t => todos.t.startsWith("T"))
-  );
+function getCompletionStatus(dataSet) {
+  return dataSet.map(({ completed }) => ({ completed }));
 }
 
-const infor = checkTaskCompletion(todos, ["completed"]);
-console.log(infor);
+function getCompletedUserId(dataSet) {
+  return dataSet
+    .filter(({ completed }) => completed === true)
+    .map(dataSet => dataSet.title);
+}
 
-// function delegateIncompleteTasksToUser(tasks, workhorse) {
-//   return // Your code here!
-//   /**
-//    * 1. getIncompleteTasks using filter
-//    * 2. Replace the userId with 'workhorse'.
-//    */
-// }
+function getCompletedTasks(dataSet) {
+  return dataSet
+    .map(({ completed }) => ({ completed }))
+    .filter(dataSet => dataSet.completed === true);
+}
 
-// function getAllTasksForUser(tasks, user) {
-//   return // Your code here!
-// }
+function getIdUser(people) {
+  return people.map(({ userId }) => ({ userId }));
+}
 
-// function getIncompleteTasks(tasks) {
-//   return tasks.filter(task => checkTaskCompletion(task));
-// }
+function peopleNumber(user) {
+  return user.map(({ id }) => ({ id }));
+}
 
-// function completeTasksForUser(tasks, user) {
-//   return // Your code here!
-//   /**
-//    * getAllTasksForUser
-//    * 🗺️over these tasks, marking each one as 'complete.'
-//    */
-// }
+function jobTitle(name) {
+  return name.map(({ title }) => ({ title }));
+}
 
-// function tallyTasksPerPerson(tasks) {
-//   return tasks.reduce((currentTask, tally) => {
-//     // Your code here!
-//     /**
-//      * 1. Check if the current 'userId' is already included in the 'finished tally object'.
-//      * 2. If not, create that 'userId' and set its VALUE equal to 1.
-//      * 3. ELSE, add one to the current VALUE for that 'userId'
-//      * */
-//   })
-// }
+//console.log(jobTitle(todos));
+//console.log(peopleNumber(todos));
+//console.log(getIdUser(todos));
+//console.log(getCompletionStatus(todos));
+//console.log(getCompletedTasks(todos));
+console.log(getCompletedUserId(todos));
 
-// console.log(getIncompleteTasks(todos));
+function checkTaskCompletion(task) {
+  return;
+}
 
-// console.log(tallyTasksPerPerson(todos));
+function delegateIncompleteTasksToUser(tasks, workhorse) {
+  return; // Your code here!
+  /**
+   * 1. getIncompleteTasks using filter
+   * 2. Replace the userId with 'workhorse'.
+   */
+}
+
+function getAllTasksForUser(tasks, user) {
+  return; // Your code here!
+}
+
+function getIncompleteTasks(tasks) {
+  return tasks.filter(task => checkTaskCompletion(task));
+}
+
+function completeTasksForUser(tasks, user) {
+  return; // Your code here!
+  /**
+   * getAllTasksForUser
+   * 🗺️over these tasks, marking each one as 'complete.'
+   */
+}
+
+function tallyTasksPerPerson(tasks) {
+  return tasks.reduce((currentTask, tally) => {
+    // Your code here!
+    /**
+     * 1. Check if the current 'userId' is already included in the 'finished tally object'.
+     * 2. If not, create that 'userId' and set its VALUE equal to 1.
+     * 3. ELSE, add one to the current VALUE for that 'userId'
+     * */
+  });
+}
+
+console.log(getIncompleteTasks(todos));
+
+console.log(tallyTasksPerPerson(todos));
