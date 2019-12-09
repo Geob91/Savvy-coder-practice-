@@ -1214,6 +1214,10 @@ function checkTaskCompletion(task) {
   return task.map(({ completed }) => ({ completed }));
 }
 
+function getPeeps(person) {
+  return person.map(({ userId }) => userId);
+}
+
 function checkTaskFinished(task) {
   return task.filter(({ completed }) => completed === false);
 }
@@ -1241,13 +1245,13 @@ function delegateIncompleteTasksToUser(tasks, workhorse) {
 //   return tasks.filter(task => checkTaskCompletion(task));
 // }
 
-// function completeTasksForUser(tasks, user) {
-//   return; // Your code here!
+function completeTasksForUser(tasks, user) {
+  return tasks.map(t => t.UserId === user);
+}
 
-//     getAllTasksForUser
-//     🗺️over these tasks, marking each one as 'complete.'
-
-// }
+console.log(completeTasksForUser(todos));
+//  getAllTasksForUser
+//  🗺️over these tasks, marking each one as 'complete.'
 
 // function tallyTasksPerPerson(tasks) {
 //   return tasks.reduce((currentTask, tally) => {
@@ -1264,5 +1268,6 @@ function delegateIncompleteTasksToUser(tasks, workhorse) {
 //console.log(checkTaskCompletion(todos));
 //console.log(tallyTasksPerPerson(todos));
 
-console.log(delegateIncompleteTasksToUser(todos, "workhorse"));
-console.log(checkTaskFinished(todos));
+//console.log(getPeeps(todos));
+// console.log(delegateIncompleteTasksToUser(todos, "mike"));
+// console.log(checkTaskFinished(todos));
