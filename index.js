@@ -1230,7 +1230,18 @@ function delegateIncompleteTasksToUser(tasks, workhorse) {
   });
 }
 
-// console.log(delegateIncompleteTasksToUser(todos, "workhorse"));
+function getUserId(complete) {
+  return complete
+    .filter(({ completed }) => completed === true)
+    .map(({ id }) => id);
+}
+
+//console.log(getUserId(todos));
+
+function completeTasksForUser(tasks, user) {
+  return tasks.map(t => t.UserId === user);
+}
+//console.log(delegateIncompleteTasksToUser(todos, "workhorse"));
 
 //console.log(delegateIncompleteTasksToUser("workhorse"));
 
@@ -1245,16 +1256,16 @@ function delegateIncompleteTasksToUser(tasks, workhorse) {
 //   return tasks.filter(task => checkTaskCompletion(task));
 // }
 
-function completeTasksForUser(tasks, user) {
-  return tasks.map(t => t.UserId === user);
-}
-
-console.log(completeTasksForUser(todos));
 //  getAllTasksForUser
 //  🗺️over these tasks, marking each one as 'complete.'
 
-// function tallyTasksPerPerson(tasks) {
-//   return tasks.reduce((currentTask, tally) => {
+function getAvg(todos) {
+  return todos.reduce((total, num) => total + num);
+}
+
+console.log(getAvg(todos));
+
+//console.log(tallyTasksPerPerson(todos));
 //     // Your code here!
 
 //       1. Check if the current 'userId' is already included in the 'finished tally object'.
@@ -1267,7 +1278,8 @@ console.log(completeTasksForUser(todos));
 
 //console.log(checkTaskCompletion(todos));
 //console.log(tallyTasksPerPerson(todos));
-
+//console.log(getUserId(todos));
 //console.log(getPeeps(todos));
 // console.log(delegateIncompleteTasksToUser(todos, "mike"));
-// console.log(checkTaskFinished(todos));
+//console.log(checkTaskFinished(todos));
+//console.log(completeTasksForUser(todos));
