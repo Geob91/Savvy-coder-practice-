@@ -7,7 +7,9 @@ const strs = [
   "Hello",
   "Hell",
   "world",
-  "Hello"
+  "Hello",
+  { me: "name" },
+  { me: "name" }
 ];
 
 // function giveMeAnswer(strings) {
@@ -29,7 +31,7 @@ function findValue(someArr, target) {
   return someArr.filter(element => element === target).length;
 }
 
-console.log(findValue(strs, "Hello"));
+console.log(findValue(strs, { me: "name" }));
 
 // console.log(findValue(strs));
 // console.log(hasHello(strs));
