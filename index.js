@@ -27,4 +27,10 @@ function getLowScores(people, threshold) {
     .map(person => person.name);
 }
 
+function deStrFunciton(people, threshold) {
+  return people
+    .filter(({ score }) => score <= threshold)
+    .map(({ name }) => name);
+}
+console.log(deStrFunciton(students, 80));
 console.log(getLowScores(students, 80));
