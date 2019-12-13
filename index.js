@@ -250,6 +250,25 @@ function getTLD(url) {
 
 const TLDSS = users.map(({website}) => website).filter(website => website.endsWith(".biz"))
 
-const TLDSZ = users.map(({website}) => getTLD(website)).filter(website => website ===".biz")
 
-console.log(TLDSZ)
+const TLDTally = users.map(({website}) => getTLD(website))
+.reduce((tally, TLD) => {
+  if(!tally[TLD]){
+  tally[TLD] = 1;
+  }else{
+    tally[TLD] += 1;
+  }
+  return tally
+},{})
+
+
+console.log(TLDTally)
+//console.log(TLDSZ)
+
+
+const nums =[1,2,3,4,5,6,7,8,]
+//console.log(nums.reduce((acc, cnum) => acc + cnum))
+
+
+
+
