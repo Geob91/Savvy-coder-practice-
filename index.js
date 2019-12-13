@@ -230,48 +230,24 @@ const users = [
     }
   }
 ];
-function getTLD(url) {
-  /**
-   * The TLD will be the characters after the last '.'
-   * Slice off everything after that and return it.
-   */
-  return url.slice(url.lastIndexOf("."));
-}
-// TODO: MAP over this and just give us back an Array of TLDs
 
-
-
-
-function getTLD(url) {
-  return url.slice(url.lastIndexOf("."));
+function getName(name) {
+  return name.map(({ name }) => name);
 }
 
-//const TLDS = users.map(({website, email}) => `${getTLD(website)} ${getTLD(email)}`);
+console.log(getName(users));
 
-const TLDSS = users.map(({website}) => website).filter(website => website.endsWith(".biz"))
+function getStreet(name, address) {
+  return name.map(({ name, address }) => ({ name, street: address.street }));
+}
 
+console.log(getStreet(users));
 
-const TLDTally = users.map(({website}) => getTLD(website))
-.reduce((tally, TLD) => {
-  if(!tally[TLD]){
-  tally[TLD] = 1;
-  }else{
-    tally[TLD] += 1;
-  }
+function getCompName(company, name) {
+  return company.map(({ name, company }) => ({
+    name,
+    company: company.name
+  }));
+}
 
-tally[TLD] ? (tally[TLD] += 1) : (tally[TLD] = 1);
-
-  return tally
-},{})
-
-
-console.log(TLDTally)
-//console.log(TLDSZ)
-
-
-const nums =[1,2,3,4,5,6,7,8,]
-//console.log(nums.reduce((acc, cnum) => acc + cnum))
-
-
-
-
+console.log(getCompName(users));
