@@ -258,6 +258,9 @@ const TLDTally = users.map(({website}) => getTLD(website))
   }else{
     tally[TLD] += 1;
   }
+
+tally[TLD] ? (tally[TLD] += 1) : (tally[TLD] = 1);
+
   return tally
 },{})
 
