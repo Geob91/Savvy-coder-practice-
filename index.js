@@ -235,13 +235,13 @@ function getName(name) {
   return name.map(({ name }) => name);
 }
 
-console.log(getName(users));
+//console.log(getName(users));
 
 function getStreet(name, address) {
   return name.map(({ name, address }) => ({ name, street: address.street }));
 }
 
-console.log(getStreet(users));
+//console.log(getStreet(users));
 
 function getCompName(company, name) {
   return company.map(({ name, company }) => ({
@@ -250,4 +250,36 @@ function getCompName(company, name) {
   }));
 }
 
-console.log(getCompName(users));
+//console.log(getCompName(users));
+
+function lastName(lname) {
+  return lname.filter(lname => lname.name.endsWith("m"));
+}
+
+function getWebsite(website1) {
+  return website1.filter(website1 => website1.website.endsWith(".com"));
+}
+
+//console.log(getWebsite(users));
+
+//console.log(lastName(users));
+
+function getOdd(who) {
+  return who
+    .filter(i => i.id % 2 === 1)
+    .reduce((acc, totalNum) => {
+      if (!acc[totalNum.id]) {
+        acc[totalNum.id] = 1;
+      } else [(acc[totalNum.id] += 1)];
+
+      return acc;
+    }, {});
+}
+
+console.log(getOdd(users));
+
+// function addId(add) {
+//   return add.reduce(currentTotal, acc => currentTotal + acc)
+// }
+
+// console.log(addId(users));
